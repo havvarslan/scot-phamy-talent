@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Form, Grid, Header, List } from "semantic-ui-react";
+import { Button, Form, Grid, Header, List, Message } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { signApi } from "../api/auth";
 
@@ -45,7 +45,7 @@ export default class Login extends Component {
         >
           <Grid.Column style={{ maxWidth: 450 }}>
             <Header as="h2" color="blue" textAlign="center">
-              Login to your account
+              Log into your account
             </Header>
             <Form onSubmit={this.handleSubmit} size="large">
               <p align="left">Email</p>
@@ -81,14 +81,19 @@ export default class Login extends Component {
               </Button>
               {this.state.error ? <div>Wrong Info. Try Again</div> : null}
             </Form>
-            <List divided horizontal>
+            <List>
               <List.Item as="a">
-                <List.Content as={Link} to="/create-account">
-                  Create an Account?
-                </List.Content>
-                <List.Content as={Link} to="/reset-password">
-                  Forgot your password?
-                </List.Content>
+                <Message>
+                  <List.Content as={Link} to="/create-account">
+                    Create Account
+                  </List.Content>
+                </Message>
+
+                <Message>
+                  <List.Content as={Link} to="/reset-password">
+                    Forgot password
+                  </List.Content>
+                </Message>
               </List.Item>
             </List>
           </Grid.Column>
