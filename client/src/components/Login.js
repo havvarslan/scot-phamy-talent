@@ -90,10 +90,14 @@ export default class Login extends Component {
               </Button>
               {this.state.error ? <div>Wrong Info. Try Again</div> : null}
             </Form>
-            <List divided horizontal>
+            <List>
               <List.Item>
-                <List.Content as="a">Already have an account?</List.Content>
-                <List.Content as="a">Forgot your password?</List.Content>
+                <Message>
+                  <List.Content as="a">Create account</List.Content>
+                </Message>
+                <Message>
+                  <List.Content as="a">Forgot password</List.Content>
+                </Message>
               </List.Item>
             </List>
           </Grid.Column>
